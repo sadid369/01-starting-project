@@ -4,6 +4,8 @@ import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import MainHeader from "./components/MainHeader/MainHeader";
 import Counter from "./components/ComplexCounter";
+import ClickCounter from "./components/ClickCounter";
+import HoverCounter from "./components/HoverCounter";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -35,7 +37,8 @@ function App() {
     //   </main>
     // </React.Fragment>
     <>
-      <Counter></Counter>
+      <HoverCounter></HoverCounter>
+      <ClickCounter></ClickCounter>
     </>
   );
 }
