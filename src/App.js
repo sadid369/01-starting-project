@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
@@ -6,6 +6,9 @@ import MainHeader from "./components/MainHeader/MainHeader";
 import Counter from "./components/ComplexCounter";
 import ClickCounter from "./components/ClickCounter";
 import HoverCounter from "./components/HoverCounter";
+import NoteSate from "./context/NoteState";
+import noteContext from "./context/noteContext";
+import About from "./context/About";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,6 +30,10 @@ function App() {
     localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
   };
+  // const a = useContext(noteContext);
+  // useEffect(() => {
+  //   a.update();
+  // }, []);
 
   return (
     // <React.Fragment>
@@ -36,10 +43,15 @@ function App() {
     //     {isLoggedIn && <Home onLogout={logoutHandler} />}
     //   </main>
     // </React.Fragment>
-    <>
-      <HoverCounter></HoverCounter>
-      <ClickCounter></ClickCounter>
-    </>
+    // <>
+    //   <HoverCounter></HoverCounter>
+    //   <ClickCounter></ClickCounter>
+    // </>
+    <NoteSate>
+      <div>
+        <About></About>
+      </div>
+    </NoteSate>
   );
 }
 
