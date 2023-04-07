@@ -30,28 +30,15 @@ function App() {
     localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
   };
-  // const a = useContext(noteContext);
-  // useEffect(() => {
-  //   a.update();
-  // }, []);
 
   return (
-    // <React.Fragment>
-    //   <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
-    //   <main>
-    //     {!isLoggedIn && <Login onLogin={loginHandler} />}
-    //     {isLoggedIn && <Home onLogout={logoutHandler} />}
-    //   </main>
-    // </React.Fragment>
-    // <>
-    //   <HoverCounter></HoverCounter>
-    //   <ClickCounter></ClickCounter>
-    // </>
-    <NoteSate>
-      <div>
-        <About></About>
-      </div>
-    </NoteSate>
+    <React.Fragment>
+      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <main>
+        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {isLoggedIn && <Home onLogout={logoutHandler} />}
+      </main>
+    </React.Fragment>
   );
 }
 
